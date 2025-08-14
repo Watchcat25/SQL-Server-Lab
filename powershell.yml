@@ -1,0 +1,11 @@
+name: PowerShell
+on: [push, pull_request]
+jobs:
+  lint:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - shell: pwsh
+        run: |
+          Install-Module PSScriptAnalyzer -Scope CurrentUser -Force
+          Invoke-ScriptAnalyzer -Path . -Recurse -Severity Warning
