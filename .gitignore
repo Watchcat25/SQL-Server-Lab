@@ -1,0 +1,7 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Python venv (if used)
+.venv
+__pycache__/
